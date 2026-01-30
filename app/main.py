@@ -2,7 +2,7 @@ import base64
 import json
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 
-from app.session import Session
+from app.sessions import Session
 from app.gemini_ws import GeminiLiveClient
 
 app = FastAPI()
@@ -44,4 +44,5 @@ async def spectacles_ws(ws: WebSocket):
         pass
     finally:
         await gemini.close()
+
 
